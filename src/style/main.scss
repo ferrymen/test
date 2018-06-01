@@ -22,6 +22,7 @@
 // settings
 @import "01_settings/typography";
 @import "01_settings/layout";
+@import "01_settings/section";
 
 // tools
 @import "02_tools/functions";
@@ -39,7 +40,9 @@
 @import "05_objects/grid";
 @import "05_objects/list";
 @import "05_objects/flag";
+@import "05_objects/section";
 
+// components
 @import "06_components/card";
 
 // utilities
