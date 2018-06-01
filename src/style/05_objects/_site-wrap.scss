@@ -1,0 +1,10 @@
+.o-site-wrap {
+  max-width: $site-wrap-width;
+  margin: 0 auto;
+}
+
+.o-site-wrap--soft {
+  max-width: $site-wrap-width + ($site-wrap-padding * 2);
+  padding-left: $site-wrap-padding;
+  padding-right: $site-wrap-padding;
+}
