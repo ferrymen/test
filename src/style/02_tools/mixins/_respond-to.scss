@@ -1,7 +1,7 @@
 // 输出包裹最小宽度和最大宽度媒体查询的响应式内容
 @mixin respond-to($breakpoint) {
   $max-index: str-index($breakpoint, 'max-');
-  
+
   @if $max-index == null {
     @if map-has-key($breakpoints, $breakpoint) == false {
       @warn '找不到key `#{$breakpoint}` in `$breakpoint`';

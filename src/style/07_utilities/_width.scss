@@ -6,7 +6,6 @@
 @each $breakpoint in reverse-list(map-keys($breakpoints)) {
   @include respond-to('#{$breakpoint}') {
     $extension: \@#{$breakpoint};
-
     @each $i in $width-denominators {
       @include generate-width-fraction-classes($i, $extension);
     }
