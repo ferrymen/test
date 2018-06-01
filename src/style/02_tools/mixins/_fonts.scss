@@ -35,7 +35,7 @@
   font-size: $size-value + rem;
 }
 
-@mixin bm-font($font) {
+@mixin font($font) {
   $font: map-get($-fonts, $font);
 
   font-size: map-get($font, 'size');

@@ -20,31 +20,31 @@ html {
 
 // Header font sizes
 h1 {
-  @include bm-font('xxl');
+  @include font('xxl');
 }
 
 h2 {
-  @include bm-font('xl');
+  @include font('xl');
 }
 
 h3 {
-  @include bm-font('lg');
+  @include font('lg');
 }
 
 h4 {
-  @include bm-font('md');
+  @include font('md');
 }
 
 h5 {
-  @include bm-font('sm');
+  @include font('sm');
 }
 
 h6 {
-  @include bm-font('sm');
+  @include font('sm');
 }
 
 small {
-  @include bm-font('xxs');
+  @include font('xxs');
 }
 
 b,

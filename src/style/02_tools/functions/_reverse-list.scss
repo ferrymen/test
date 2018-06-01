@@ -1,4 +1,4 @@
-@function bf-reverse-list($list) {
+@function reverse-list($list) {
   $reverse: ();
 
   @each $value in $list {
