@@ -1,67 +1,67 @@
 // 默认字体大小，所以字体都是通过这个字体rem运算
-$-base-font-size: 16px !default;
+$base-font-size: 16px !default;
 
 // 字体权重
-$-base-blod-font-weight: 600 !default;
+$base-blod-font-weight: 600 !default;
 
 // Brand fonts
-$-brand-font-family: Helvetica Neue, Calibri Light, Roboto, sans-serif !default;
-$-default-font-family: arial !default;
+$brand-font-family: Helvetica Neue, Calibri Light, Roboto, sans-serif !default;
+$default-font-family: arial !default;
 
-$-brand-letter-spacing: 0.02em !default;
-$-default-letter-spacing: 0.02em !default;
+$brand-letter-spacing: 0.02em !default;
+$default-letter-spacing: 0.02em !default;
 
-$-brand-line-height: 1.5 !default;
-$-default-line-height: 1.3 !default;
+$brand-line-height: 1.5 !default;
+$default-line-height: 1.3 !default;
 
 // 字体配置
-$-fonts: (
+$fonts: (
   xxl: (
     size: 2.4rem,
-    family: $-brand-font-family,
-    letter-spacing: $-brand-letter-spacing,
-    line-height: $-brand-line-height
+    family: $brand-font-family,
+    letter-spacing: $brand-letter-spacing,
+    line-height: $brand-line-height
   ),
   xl: (
     size: 2rem,
-    family: $-brand-font-family,
-    letter-spacing: $-brand-letter-spacing,
-    line-height: $-brand-line-height
+    family: $brand-font-family,
+    letter-spacing: $brand-letter-spacing,
+    line-height: $brand-line-height
   ),
   lg: (
     size: 1.8rem,
-    family: $-brand-font-family,
-    letter-spacing: $-brand-letter-spacing,
-    line-height: $-brand-line-height
+    family: $brand-font-family,
+    letter-spacing: $brand-letter-spacing,
+    line-height: $brand-line-height
   ),
   md: (
     size: 1.6rem,
-    family: $-brand-font-family,
-    letter-spacing: $-brand-letter-spacing,
-    line-height: $-brand-line-height
+    family: $brand-font-family,
+    letter-spacing: $brand-letter-spacing,
+    line-height: $brand-line-height
   ),
   sm: (
     size: 1.4rem,
-    family: $-brand-font-family,
-    letter-spacing: $-brand-letter-spacing,
-    line-height: $-brand-line-height
+    family: $brand-font-family,
+    letter-spacing: $brand-letter-spacing,
+    line-height: $brand-line-height
   ),
   xs: (
     size: 1rem,
-    family: $-default-font-family,
-    letter-spacing: $-default-letter-spacing,
-    line-height: $-default-line-height
+    family: $default-font-family,
+    letter-spacing: $default-letter-spacing,
+    line-height: $default-line-height
   ),
   xxs: (
     size: 0.8rem,
-    family: $-default-font-family,
-    letter-spacing: $-default-letter-spacing,
-    line-height: $-default-line-height
+    family: $default-font-family,
+    letter-spacing: $default-letter-spacing,
+    line-height: $default-line-height
   ),
 ) !default;
 
 // 断点元组
-$-font-breakpoint-multipliers: (
+$font-breakpoint-multipliers: (
   xs: ( width: 480px, multiplier: 0.8),
   sm: ( width: 720px, multiplier: 0.9),
   md: ( width: 960px, multiplier: 1),

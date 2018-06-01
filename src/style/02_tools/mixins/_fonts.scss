@@ -36,7 +36,7 @@
 }
 
 @mixin font($font) {
-  $font: map-get($-fonts, $font);
+  $font: map-get($fonts, $font);
 
   font-size: map-get($font, 'size');
   font-family: map-get($font, 'family');
