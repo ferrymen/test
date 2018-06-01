@@ -5,6 +5,8 @@
   margin: 0;
   vertical-align: top;
   list-style: none;
+  font-size: 0; // grid item 之间水平分布
+  letter-spacing: 0; // grid item 之间水平分布
 }
 
 // 水平间距
@@ -45,4 +47,6 @@
   display: inline-block;
   min-height: 1px;
   width: 100%;
+  font-size: 1rem;
+  letter-spacing: $default-letter-spacing;
 }
