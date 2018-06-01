@@ -1,0 +1,32 @@
+// 设置marging
+@mixin generate-push-classes($extension: '') {
+  .u-push#{$extension} {
+    margin: $spacing-unit !important;
+  }
+
+  .u-push-left#{$extension} {
+    margin-left: $spacing-unit !important;
+  }
+
+  .u-push-right#{$extension} {
+    margin-right: $spacing-unit !important;
+  }
+
+  .u-push-top#{$extension} {
+    margin-top: $spacing-unit !important;
+  }
+
+  .u-push-bottom#{$extension} {
+    margin-bottom: $spacing-unit !important;
+  }
+
+  .u-push-ends#{$extension} {
+    margin-top: $spacing-unit !important;
+    margin-bottom: $spacing-unit !important;
+  }
+
+  .u-push-sides#{$extension} {
+    margin-left: $spacing-unit !important;
+    margin-right: $spacing-unit !important;
+  }
+}

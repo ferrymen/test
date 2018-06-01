@@ -1,0 +1,32 @@
+// 设置padding
+@mixin generate-soft-classes($extension: '') {
+  .u-soft#{$extension} {
+    padding: $spacing-unit !important;
+  }
+
+  .u-soft-left#{$extension} {
+    padding-left: $spacing-unit !important;
+  }
+
+  .u-soft-right#{$extension} {
+    padding-right: $spacing-unit !important;
+  }
+
+  .u-soft-top#{$extension} {
+    padding-top: $spacing-unit !important;
+  }
+
+  .u-soft-bottom#{$extension} {
+    padding-bottom: $spacing-unit !important;
+  }
+
+  .u-soft-ends#{$extension} {
+    padding-top: $spacing-unit !important;
+    padding-bottom: $spacing-unit !important;
+  }
+
+  .u-soft-sides#{$extension} {
+    padding-left: $spacing-unit !important;
+    padding-right: $spacing-unit !important;
+  }
+}
