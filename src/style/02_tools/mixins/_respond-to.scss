@@ -1,0 +1,25 @@
+// 输出包裹最小宽度和最大宽度媒体查询的响应式内容
+@mixin bm-respond-to($breakpoint) {
+  $max-index: str-index($breakpoint, 'max-');
+
+  @if $max-index == null {
+    @if map-has-key($b-breakpoints, $breakpoint) == false {
+      @warn '找不到key `#{$breakpoint}` in `$breakpoint`';
+    }
+
+    @media (min-width: #{map-get($b-breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+  @else {
+    $breakpoint: str-slice($breakpoint, 5);
+
+    @if map-has-key($b-breakpoints, $breakpoint) == false {
+      @warn '找不到key `#{$breakpoint}` in `$breakpoint`';
+    }
+
+    @media (max-width: #{map-get($b-breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+}

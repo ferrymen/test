@@ -1,0 +1,27 @@
+// Consitency across all lists
+ul,
+ol,
+dd {
+  margin-left: $b-spacing-unit; // 1rem
+}
+
+// Consistent vertical spacing for block elements
+// Remove vertical spacing as framework box sizes everything so padding is safer and apply padding
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre {
+  margin: 0;
+  margin-bottom: $b-spacing-unit;
+}
+
+// Need to reset hr style due to using padding instead of margin
+hr {
+  border: 0;
+  border-top: inset 1px;
+  margin-bottom: $b-spacing-unit;
+}

@@ -1,0 +1,8 @@
+// 盒字模型
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}

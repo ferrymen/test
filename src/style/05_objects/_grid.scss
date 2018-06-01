@@ -1,0 +1,48 @@
+// 栅格系统
+.o-grid {
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  list-style: none;
+}
+
+// 水平间距
+.o-grid--gutter {
+  margin-left: -$b-spacing-unit;
+}
+.o-grid--gutter > .o-grid__item {
+  padding-left: $b-spacing-unit;
+}
+
+// 垂直间距
+.o-grid--trench {
+  margin-top: -$b-spacing-unit;
+}
+.o-grid--gutter > .o-grid__item {
+  padding-top: $b-spacing-unit;
+}
+
+// 中心对齐/底部对齐
+.o-grid--align-center {
+  vertical-align: middle;
+}
+.o-grid--align-bottom {
+  vertical-align: bottom;
+}
+
+.o-grid--match-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+.o-grid--match-height > .o-grid__item {
+  display: flex;
+}
+
+.o-grid__item {
+  position: relative;
+  vertical-align: inherit;
+  display: inline-block;
+  min-height: 1px;
+  width: 100%;
+}

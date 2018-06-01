@@ -1,0 +1,45 @@
+/**
+ * Font face
+ * @param {string} $style-name
+ * @param {string} $file
+ * @param {string} $family
+ * @param {string} $category
+ * @param {number} $weight
+ */
+
+@mixin mix-font-face ($style-name, $file, $family, $catergory: "", $weight: 400) {
+  $filepath: "../fonts/" + $family + "/" + $file;
+  @font-face {
+    -webkit-font-smoothing: antialiased;
+    font-family: "#{$style-name}";
+    font-weight: $weight;
+    src: url("#{$filepath}.eot?#iefix") format("eot"),
+    url("#{$filepath}.woff2") format("woff2"),
+    url("#{$filepath}.woff") format("woff"),
+    url("#{$filepath}.ttf") format("truetype"),
+    url("#{$filepath}.svg##{$style-name}") format("svg");
+  }
+
+  // CSS hack code for Webkit core browsers like Chrome and Safari.
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+      font-family: "#{$style-name}";
+      font-weight: $weight;
+      src: url("#{$filepath}.svg##{$style-name}") format("svg");
+    }
+  }
+}
+
+@mixin mix-font-size ($size-value: 1.5) {
+  font-size: ($size-value * 10) + px;
+  font-size: $size-value + rem;
+}
+
+@mixin bm-font($font) {
+  $font: map-get($b-fonts, $font);
+
+  font-size: map-get($font, 'size');
+  font-family: map-get($font, 'family');
+  line-height: map-get($font, 'line-height');
+  letter-spacing: map-get($font, 'letter-spacing');
+}

@@ -1,0 +1,18 @@
+// 定义间距单位，当设置margin或padding时会应用到
+$b-spacing-unit: 1rem !default;
+$b-spacing-unit-double: $b-spacing-unit * 2;
+$b-spacing-unit-half: $b-spacing-unit * 0.5;
+$b-spacing-unit-quarter: $b-spacing-unit * 0.25;
+
+// 断点，用于响应式类
+$b-breakpoints: (
+  lg: 1200px,
+  md: 960px,
+  sm: 720px,
+  xs: 460px
+) !default;
+
+// 生成分数类，如：u-1/2, u-pull-1/5, u-shove-1/10
+$b-width-denominators: (
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+) !default;
