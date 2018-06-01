@@ -1,19 +1,19 @@
 // 根字体设置
 html {
-  font-family: $b-default-font-family;
-  font-size: $b-base-font-size * map-get(map-get($b-font-breakpoint-multipliers, 'xs'), 'multiplier'); // 16*0.8
-  line-height: $b-default-line-height;
-  letter-spacing: $b-default-letter-spacing;
+  font-family: $-default-font-family;
+  font-size: $-base-font-size * map-get(map-get($-font-breakpoint-multipliers, 'xs'), 'multiplier'); // 16*0.8
+  line-height: $-default-line-height;
+  letter-spacing: $-default-letter-spacing;
 }
 
 // 响应式字体，其他字体都是基于这个rem伸缩
-@each $breakpoint in map-values($b-font-breakpoint-multipliers) {
+@each $breakpoint in map-values($-font-breakpoint-multipliers) {
   @media (min-width: map-get($breakpoint, 'width')) {
     html {
-      font-family: $b-default-font-family;
-      font-size: $b-base-font-size * map-get($breakpoint ,'multiplier');
-      line-height: $b-default-line-height;
-      letter-spacing: $b-default-letter-spacing;
+      font-family: $-default-font-family;
+      font-size: $-base-font-size * map-get($breakpoint ,'multiplier');
+      line-height: $-default-line-height;
+      letter-spacing: $-default-letter-spacing;
     }
   }
 }
@@ -49,5 +49,5 @@ small {
 
 b,
 strong {
-  font-weight: $b-base-blod-font-weight;
+  font-weight: $-base-blod-font-weight;
 }

@@ -2,7 +2,7 @@
 ul,
 ol,
 dd {
-  margin-left: $b-spacing-unit; // 1rem
+  margin-left: $-spacing-unit; // 1rem
 }
 
 // Consistent vertical spacing for block elements
@@ -16,12 +16,12 @@ h6,
 p,
 pre {
   margin: 0;
-  margin-bottom: $b-spacing-unit;
+  margin-bottom: $-spacing-unit;
 }
 
 // Need to reset hr style due to using padding instead of margin
 hr {
   border: 0;
   border-top: inset 1px;
-  margin-bottom: $b-spacing-unit;
+  margin-bottom: $-spacing-unit;
 }

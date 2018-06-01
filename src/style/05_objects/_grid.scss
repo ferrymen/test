@@ -9,18 +9,18 @@
 
 // 水平间距
 .o-grid--gutter {
-  margin-left: -$b-spacing-unit;
+  margin-left: -$-spacing-unit;
 }
 .o-grid--gutter > .o-grid__item {
-  padding-left: $b-spacing-unit;
+  padding-left: $-spacing-unit;
 }
 
 // 垂直间距
 .o-grid--trench {
-  margin-top: -$b-spacing-unit;
+  margin-top: -$-spacing-unit;
 }
 .o-grid--gutter > .o-grid__item {
-  padding-top: $b-spacing-unit;
+  padding-top: $-spacing-unit;
 }
 
 // 中心对齐/底部对齐
