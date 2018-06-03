@@ -1,9 +1,14 @@
+$document__body--color: $color__neutral-grey--ultra-dark !default;
+$document__body--bgcolor: $color__neutral-grey--ultra-light !default;
+
 // 根字体设置
 html {
   font-family: $default-font-family;
   font-size: $base-font-size * map-get(map-get($font-breakpoint-multipliers, 'xs'), 'multiplier'); // 16*0.8
   line-height: $default-line-height;
   letter-spacing: $default-letter-spacing;
+  color: $document__body--color;
+  background-color: $document__body--bgcolor;
 }
 
 // 响应式字体，其他字体都是基于这个rem伸缩
@@ -14,6 +19,8 @@ html {
       font-size: $base-font-size * map-get($breakpoint ,'multiplier');
       line-height: $default-line-height;
       letter-spacing: $default-letter-spacing;
+      color: $document__body--color;
+      background-color: $document__body--bgcolor;
     }
   }
 }

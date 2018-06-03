@@ -1,0 +1,58 @@
+$cs-brand-primary--enabled                :      true !default;
+
+$cs-brand-primary__bg-color               :      $color__brand-primary--ultra-light !default;
+$cs-brand-primary__color                  :      $color__brand-primary--dark !default;
+$cs-brand-primary__selection-bgcolor      :      $color__brand-primary--dark !default;
+$cs-brand-primary__selection-color        :      $color__brand-primary--ultra-light !default;
+$cs-brand-primary__border-color           :      rgba($color__brand-primary--light, .25) !default;
+$cs-brand-primary__link-color             :      $color__brand-secondary !default;
+$cs-brand-primary__link-hovercolor        :      $color__brand-secondary--dark !default;
+$cs-brand-primary__heading-color          :      $color__brand-primary !default;
+
+
+// Scheme mixin
+// --------------------------------------------------
+
+@mixin brand-primary() {
+  background-color: $cs-brand-primary__bg-color;
+  color: $cs-brand-primary__color;
+
+  &,
+  & * {
+    border-color: $cs-brand-primary__border-color;
+  }
+
+  &::selection,
+  & *::selection {
+    background-color: $cs-brand-primary__selection-bgcolor;
+    color: $cs-brand-primary__selection-color;
+  }
+
+  a {
+    color: $cs-brand-primary__link-color;
+
+    &:hover,
+    &:focus {
+      color: $cs-brand-primary__link-hovercolor;
+
+    }
+  }
+
+  hr {
+    border-color: $cs-brand-primary__border-color;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $cs-brand-primary__heading-color;
+  }
+
+}
+
+.brand-primary {
+  @include brand-primary();
+}

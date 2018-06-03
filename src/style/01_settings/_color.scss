@@ -1,9 +1,11 @@
 // COLORs
 @import './_color-brand';
+@import './_color-neutral';
 
 // Color groups map
 $colors: (
-  'brand': $colors-brand
+  'brand': $colors-brand,
+  "neutral": $colors-neutral,
 ) !default;
 
 // 导出变理供JS引用
