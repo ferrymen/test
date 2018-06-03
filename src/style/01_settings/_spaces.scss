@@ -1,0 +1,24 @@
+// Main space
+
+$space:                     24px !default;
+
+// Space variants
+
+$space--none:               0 !default;
+$space--tiny:               round($space * .25) !default;
+$space--small:              round($space * .5) !default;
+$space--medium:             round($space * 1) !default;
+$space--large:              round($space * 2) !default;
+$space--huge:               round($space * 4) !default;
+
+
+// Spaces map
+
+$spaces: (
+  "none":                     $space--none,
+  "tiny":                     $space--tiny,
+  "small":                    $space--small,
+  "medium":                   $space--medium,
+  "large":                    $space--large,
+  "huge":                     $space--huge,
+) !default;
