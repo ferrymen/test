@@ -15,7 +15,6 @@ export default {
       default: []
     }
   },
-  data: () => ({ styles: Style}),
   computed: {
     classes() {
       const c_classes = {

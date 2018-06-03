@@ -1,0 +1,16 @@
+@import '../_bootstrap';
+
+// 设置列表样式, e.g. ul/li
+.c-list--bare {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.c-list--gutter {
+  margin-left: -$spacing-unit;
+}
+
+.c-list--trench {
+  margin-top: -$spacing-unit;
+}
