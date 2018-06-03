@@ -1,0 +1,11 @@
+$u-colors__maps: $colors !default;
+
+@each $_color-group__name, $_color-group__map in $u-colors__maps {
+
+  @each $_color-name, $_color-value in $_color-group__map {
+
+    .u-color--#{$_color-name} {
+      color: $_color-value !important;
+    }
+  }
+}

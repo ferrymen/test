@@ -1,0 +1,35 @@
+@import '../_bootstrap';
+
+// 栅格系统
+.c-grid {
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  list-style: none;
+  font-size: 0; // grid item 之间水平分布
+  letter-spacing: 0; // grid item 之间水平分布
+}
+
+// 水平间距
+.c-grid--gutter {
+  margin-left: -$spacing-unit;
+}
+
+// 垂直间距
+.c-grid--trench {
+  margin-top: -$spacing-unit;
+}
+
+// 中心对齐/底部对齐
+.c-grid--align-center {
+  vertical-align: middle;
+}
+.c-grid--align-bottom {
+  vertical-align: bottom;
+}
+
+.c-grid--match-height {
+  display: flex;
+  flex-wrap: wrap;
+}

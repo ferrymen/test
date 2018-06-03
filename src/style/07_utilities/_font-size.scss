@@ -1,0 +1,10 @@
+// 字体大小
+// Font-sizes maps
+
+$u-font-sizes__maps:            $font-sizes !default;
+
+@each $_font-size__name, $_font-size__value in $u-font-sizes__maps {
+  .u-font-size--#{$_font-size__name} {
+    font-size: $_font-size__value !important;
+  }
+}

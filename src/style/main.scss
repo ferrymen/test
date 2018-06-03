@@ -20,36 +20,34 @@
  */
 
 // settings
+@import "01_settings/color";
+@import "01_settings/border";
 @import "01_settings/typography";
 @import "01_settings/layout";
-@import "01_settings/site-wrap";
-@import "01_settings/section";
 
 // tools
 @import "02_tools/functions";
 @import "02_tools/mixins";
 
 // generic
-// @import "03_generic/normalize";
-// @import "03_generic/reset";
+@import "03_generic/normalize";
+@import "03_generic/reset";
 @import "03_generic/box-sizing";
 
 // elements
 @import "04_elements/typography";
 
 // objects
-@import "05_objects/site-wrap";
-@import "05_objects/section";
-@import "05_objects/grid";
+// @import "05_objects/section";
+// @import "05_objects/grid";
 @import "05_objects/list";
 @import "05_objects/flag";
 
 // components
-@import "06_components/card";
 
 // utilities
-@import "07_utilities/width";
-@import "07_utilities/push";
-@import "07_utilities/pull";
-@import "07_utilities/shove";
-@import "07_utilities/aspect-ratio";
+// @import "07_utilities/width";
+// @import "07_utilities/push";
+// @import "07_utilities/pull";
+// @import "07_utilities/shove";
+// @import "07_utilities/aspect-ratio";

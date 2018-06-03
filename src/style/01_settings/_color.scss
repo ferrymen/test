@@ -1,0 +1,14 @@
+// COLORs
+@import './_color-brand';
+
+// Color groups map
+$colors: (
+  'brand': $colors-brand
+) !default;
+
+// 导出变理供JS引用
+// :export {
+//   color-brand-primary: {
+//     tt: $color-brand-primary
+//   }
+// }

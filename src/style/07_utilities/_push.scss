@@ -1,7 +1,9 @@
+$u-breakpoints: $breakpoints !default;
+
 // 设置margin
 @include generate-push-classes;
 
-@each $breakpoint in reverse-list(map-keys($breakpoints)) {
+@each $breakpoint in reverse-list(map-keys($u-breakpoints)) {
   @include respond-to('#{$breakpoint}') {
     $extension: \@#{$breakpoint};
     @include generate-push-classes($extension);

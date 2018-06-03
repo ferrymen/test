@@ -1,6 +1,0 @@
-@each $key, $value in $section-sizes {
-  .o-section-#{$key} {
-    padding-top: $value;
-    padding-bottom: $value;
-  }
-}

@@ -1,21 +1,24 @@
+$u-width-denominators: $width-denominators !default;
+$u-breakpoints: $breakpoints !default;
+
 // 首先生成没有响应式的宽度
-@each $i in $width-denominators {
+@each $i in $u-width-denominators {
   @include generate-width-fraction-classes($i);
 }
 
-@each $breakpoint in reverse-list(map-keys($breakpoints)) {
+@each $breakpoint in reverse-list(map-keys($u-breakpoints)) {
   @include respond-to('#{$breakpoint}') {
     $extension: \@#{$breakpoint};
-    @each $i in $width-denominators {
+    @each $i in $u-width-denominators {
       @include generate-width-fraction-classes($i, $extension);
     }
   }
 }
 
-@each $breakpoint in map-keys($breakpoints) {
+@each $breakpoint in map-keys($u-breakpoints) {
   @include respond-to('max-#{$breakpoint}') {
     $extension: \@max-#{$breakpoint};
-    @each $i in $width-denominators {
+    @each $i in $u-width-denominators {
       @include generate-width-fraction-classes($i, $extension);
     }
   }

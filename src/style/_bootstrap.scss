@@ -21,8 +21,21 @@
 
 // settings
 @import "01_settings/typography";
+@import "01_settings/font-size";
+@import "01_settings/color";
+@import "01_settings/border";
 @import "01_settings/layout";
 
 // tools
 @import "02_tools/functions";
 @import "02_tools/mixins";
+
+// utilities
+@import "07_utilities/font-size";
+@import "07_utilities/color";
+@import "07_utilities/bg-color";
+@import "07_utilities/width";
+@import "07_utilities/push";
+@import "07_utilities/pull";
+@import "07_utilities/shove";
+@import "07_utilities/aspect-ratio";

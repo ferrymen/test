@@ -1,0 +1,13 @@
+// Colors maps
+
+$u-bg-colors__maps: $colors !default;
+
+@each $_bg-color-group__name, $_bg-color-group__map in $u-bg-colors__maps {
+
+  @each $_bg-color-name, $_bg-color-value in $_bg-color-group__map {
+
+    .u-bg-color--#{$_bg-color-name} {
+      background-color: $_bg-color-value !important;
+    }
+  }
+}

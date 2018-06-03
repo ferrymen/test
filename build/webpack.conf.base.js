@@ -1,31 +1,40 @@
 const { resolve } = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
-  mode: 'development',
-  entry: './dev/main.js',
-  output: {
-    path: resolve(__dirname, '../dist'),
-    filename: '[name].js'
-  },
   resolve: {
-    extensions: ['.js', '.json']
+    extensions: ['.vue', '.js', '.json']
   },
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          // cssModules: {
+          //   localIdentName: '[name]-[local]-[hash:base64:5]',
+          //   camelCase: true
+          // }
+        }
+      },
+      {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader'
+        // loader: 'style-loader!css-loader?modules!sass-loader'
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[local]-[hash:base64:5]'
+            }
+          },
+          'sass-loader'
+        ]
       }
     ]
   },
-  devServer: {
-    open: true
-  },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'dev/index.html',
-      filename: 'index.html'
-    })
+    new VueLoaderPlugin()
   ]
 }

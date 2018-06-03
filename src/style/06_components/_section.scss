@@ -1,0 +1,15 @@
+@import '../_bootstrap';
+
+$section-sizes: (
+  xs: $spacing-unit-half,
+  sm: $spacing-unit,
+  md: $spacing-unit-double,
+  lg: $spacing-unit-double * 2
+) !default;
+
+@each $key, $value in $section-sizes {
+  .c-section-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}

@@ -1,0 +1,58 @@
+// COLORS BRAND
+
+// Main brand colors
+
+$color__brand-primary:                  #f25f5c !default;
+$color__brand-secondary:                #69b7a4 !default;
+$color__brand-accent:                   #ffe066 !default;
+
+// Primary shades
+
+$color__brand-primary--ultra-light:     mix(#fff, $color__brand-primary, 93%) !default;
+$color__brand-primary--light:           lighten($color__brand-primary, 10%) !default;
+$color__brand-primary--semi-light:      lighten($color__brand-primary, 5%) !default;
+
+$color__brand-primary--semi-dark:       darken($color__brand-primary, 5%) !default;
+$color__brand-primary--dark:            darken($color__brand-primary, 15%) !default;
+
+// Secondary shades
+
+$color__brand-secondary--ultra-light:   mix(#fff, $color__brand-secondary, 93%) !default;
+$color__brand-secondary--light:         lighten($color__brand-secondary, 10%) !default;
+$color__brand-secondary--semi-light:    lighten($color__brand-secondary, 5%) !default;
+
+$color__brand-secondary--semi-dark:     darken($color__brand-secondary, 5%) !default;
+$color__brand-secondary--dark:          darken($color__brand-secondary, 15%) !default;
+
+// Accent shades
+
+$color__brand-accent--ultra-light:      mix(#fff, $color__brand-accent, 93%) !default;
+$color__brand-accent--light:            lighten($color__brand-accent, 10%) !default;
+$color__brand-accent--semi-light:       lighten($color__brand-accent, 5%) !default;
+
+$color__brand-accent--semi-dark:        darken($color__brand-accent, 5%) !default;
+$color__brand-accent--dark:             darken($color__brand-accent, 15%) !default;
+
+
+// Brand color map
+
+$colors-brand: (
+  "primary":                   $color__brand-primary,
+  "secondary":                 $color__brand-secondary,
+  "accent":                    $color__brand-accent,
+  "primary--ultra-light":      $color__brand-primary--ultra-light,
+  "primary--light":            $color__brand-primary--light,
+  "primary--semi-light":       $color__brand-primary--semi-light,
+  "primary--semi-dark":        $color__brand-primary--semi-dark,
+  "primary--dark":             $color__brand-primary--dark,
+  "secondary--ultra-light":    $color__brand-secondary--ultra-light,
+  "secondary--light":          $color__brand-secondary--light,
+  "secondary--semi-light":     $color__brand-secondary--semi-light,
+  "secondary--semi-dark":      $color__brand-secondary--semi-dark,
+  "secondary--dark":           $color__brand-secondary--dark,
+  "accent--ultra-light":       $color__brand-accent--ultra-light,
+  "accent--light":             $color__brand-accent--light,
+  "accent--semi-light":        $color__brand-accent--semi-light,
+  "accent--semi-dark":         $color__brand-accent--semi-dark,
+  "accent--dark":              $color__brand-accent--dark,
+) !default;

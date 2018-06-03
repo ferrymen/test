@@ -1,0 +1,47 @@
+// 字体设置
+
+// Main font sizes
+
+$font-size--xxs:                10px !default;
+$font-size--xs:                 12px !default;
+$font-size--s:                  14px !default;
+$font-size--m:                  $base-font-size !default;
+$font-size--l:                  18px !default;
+$font-size--xl:                 24px !default;
+$font-size--xxl:                32px !default;
+$font-size--xxxl:               48px !default;
+
+
+// Font sizes map
+
+$font-sizes: (
+  "xxs":        $font-size--xxs,
+  "xs":         $font-size--xs,
+  "s":          $font-size--s,
+  "m":          $font-size--m,
+  "l":          $font-size--l,
+  "xl":         $font-size--xl,
+  "xxl":        $font-size--xxl,
+  "xxxl":       $font-size--xxxl,
+) !default;
+
+/* 安全检查
+ * Check
+ */
+
+@each $_font-size__name, $_font-size__value in $font-sizes {
+
+  @if (type-of($_font-size__value) == number) {
+
+    @if ($_font-size__name != "none") {
+
+      @if (unit($_font-size__value) != "px") {
+        @error "$font-sizes: `#{$_font-size__name}` needs to be a pixel value.";
+      }
+    }
+
+  } @else {
+    @error "$font-sizes: `#{$_font-size__name}` needs to be a number.";
+  }
+
+}

@@ -1,0 +1,23 @@
+@import '../_bootstrap';
+
+.c-grid__item {
+  position: relative;
+  vertical-align: inherit;
+  display: inline-block;
+  min-height: 1px;
+  width: 100%;
+  font-size: 1rem;
+  letter-spacing: $default-letter-spacing;
+}
+
+.c-grid--gutter > .o-grid__item {
+  padding-left: $spacing-unit;
+}
+
+.c-grid--gutter > .o-grid__item {
+  padding-top: $spacing-unit;
+}
+
+.c-grid--match-height > .o-grid__item {
+  display: flex;
+}

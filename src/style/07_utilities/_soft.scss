@@ -1,13 +1,15 @@
+$u-breakpoints: $breakpoints !default;
+
 @include generate-soft-classes;
 
-@each $breakpoint in reverse-list(map-keys($breakpoints)) {
+@each $breakpoint in reverse-list(map-keys($u-breakpoints)) {
   @include respond-to('#{$breakpoint}') {
     $extension: \@#{$breakpoint};
     @include generate-soft-classes($extension);
   }
 }
 
-@each $breakpoint in map-keys($breakpoints) {
+@each $breakpoint in map-keys($u-breakpoints) {
   @include respond-to('max-#{$breakpoint}') {
     $extension: \@max-#{$breakpoint};
     @include generate-soft-classes($extension);
