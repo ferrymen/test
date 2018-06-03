@@ -1,0 +1,9 @@
+@function get-breakpoint-width($_bp-name, $_breakpoints: $t-mq__breakpoints) {
+
+  @if map-has-key($_breakpoints, $_bp-name) {
+    @return map-get($_breakpoints, $_bp-name);
+  } @else {
+
+    @warn "Breakpoint #{$_bp-name} wasn't found in $_breakpoints.";
+  }
+}

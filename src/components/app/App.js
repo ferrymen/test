@@ -9,7 +9,6 @@ export default {
     }
   },
   render (h) {
-    console.log(this)
     return h(
       'div',
       {

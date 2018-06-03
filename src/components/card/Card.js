@@ -9,18 +9,30 @@ export default {
       default: 'auto'
     },
     img: String,
-    bgColor: String
+    bgColor: String,
+    aligns: {
+      type: Array,
+      default: []
+    }
   },
   computed: {
+    classes() {
+      const c_classes = {
+        [Style[`u-bg-color--${this.bgColor}`]]: true
+      }
+      this.aligns.forEach(el => {
+        c_classes[Style[`u-align--${el}`]] = true
+      });
+      console.log(c_classes)
+      return c_classes
+    },
     styles() {
       const style = {
         height: isNaN(this.height) ? this.height : `${this.height}px`
       }
-      console.log(this.bgColor)
+
       if (this.img) {
         style.background = `url("${this.img}") center center / cover no-repeat`
-      } else if (this.bgColor) {
-        style.background = Style[`color-${this.bgColor}`]
       }
 
       if (this.width) {
@@ -35,7 +47,8 @@ export default {
       'div',
       {
         staticClass: Style['c-card'],
-        style: this.styles
+        style: this.styles,
+        class: this.classes
       },
       this.$slots.default
     )

@@ -20,6 +20,7 @@
  */
 
 // settings
+@import "01_settings/core";
 @import "01_settings/typography";
 @import "01_settings/font-size";
 @import "01_settings/color";
@@ -36,6 +37,7 @@
 @import "07_utilities/color";
 @import "07_utilities/bg-color";
 @import "07_utilities/margin";
+@import "07_utilities/align";
 @import "07_utilities/padding";
 @import "07_utilities/width";
 @import "07_utilities/push";

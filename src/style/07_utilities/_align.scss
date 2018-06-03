@@ -1,0 +1,23 @@
+// Alignments
+
+$u-align__alignments:                   (left, center, right) !default;
+
+
+$u-align__mod-bp:                       map_remove($breakpoints, "xxs") !default;
+
+@each $_alignment in $u-align__alignments {
+  .u-align--#{$_alignment} {
+    text-align: $_alignment !important;
+  }
+}
+
+
+@each $_bp-name, $_bp-value in $u-align__mod-bp {
+  @include mq($from: $_bp-name) {
+    @each $_alignment in $u-align__alignments {
+      .u-align--#{$_alignment}#{string-breakpoint($_bp-name)} {
+        text-align: $_alignment !important;
+      }
+    }
+  }
+}

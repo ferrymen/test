@@ -1,27 +1,9 @@
 @import '../_bootstrap';
 
-$card-padding: $spacing-unit !default;
-// $card-border-style: $border-style !default;
-// $card-border-width: $border-width !default;
-// $card-border-color: $border-color !default;
-// $card-border-radius: $border-radius !default;
-
-// $card-background-color: $color-white !default;
-
 .c-card {
-  padding: $card-padding;
-}
-
-.c-card--border {
-  // border-style: $card-border-style;
-  // border-width: $card-border-width;
-  // border-color: $card-border-color;
-}
-
-.c-card--radius {
-  // border-radius: $card-border-radius;
-}
-
-.c-card--bg-color {
-  // background-color: $card-background-color;
+  margin-bottom: $space--small;
+  padding-top: $space--large;
+  padding-bottom: $space--large;
+  background-color: $color__brand-primary--dark;
+  color: $color__brand-primary--ultra-light;
 }

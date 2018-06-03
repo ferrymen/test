@@ -1,0 +1,3 @@
+@function string-breakpoint($_bp-name) {
+  @return unquote("#{$breakpoint-separator}#{$_bp-name}");
+}
