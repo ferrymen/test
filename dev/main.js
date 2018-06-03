@@ -3,7 +3,7 @@ import '../src/style/main.scss'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import BellUI from '../src'
+import BellUI from 'bell-ui'
 // import APP1 from './App1'
 import APP from './App'
 import routes from './routes'

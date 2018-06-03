@@ -15,6 +15,7 @@ export default {
       default: []
     }
   },
+  data: () => ({ styles: Style}),
   computed: {
     classes() {
       const c_classes = {
@@ -23,10 +24,9 @@ export default {
       this.aligns.forEach(el => {
         c_classes[Style[`u-align--${el}`]] = true
       });
-      console.log(c_classes)
       return c_classes
     },
-    styles() {
+    oStyles() {
       const style = {
         height: isNaN(this.height) ? this.height : `${this.height}px`
       }
@@ -47,7 +47,7 @@ export default {
       'div',
       {
         staticClass: Style['c-card'],
-        style: this.styles,
+        style: this.oStyles,
         class: this.classes
       },
       this.$slots.default
