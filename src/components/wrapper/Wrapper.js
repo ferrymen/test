@@ -6,7 +6,7 @@ export default {
     return h(
       'div',
       {
-        staticClass: 'c-wrapper'
+        staticClass: Style['c-wrapper'] + ' ' + Style['u-ph--medium']
       },
       this.$slots.default
     )

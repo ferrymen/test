@@ -1,4 +1,6 @@
 // PX TO REM
+@import 'strip-units';
+
 @function px-to-rem($_value, $_root-font-size: $base-font-size) {
   @if ($_value == 0) {
     @return 0;

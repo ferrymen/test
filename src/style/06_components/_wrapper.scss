@@ -1,3 +1,9 @@
 @import '../_bootstrap';
 
 $c-wrapper__mod-bp:  map-remove($breakpoints, "xxs") !default;
+
+.c-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
