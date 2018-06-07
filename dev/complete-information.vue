@@ -3,7 +3,7 @@
     <GridItem>
       <Card bg-color="primary" :aligns="['left', 'center@xs']">
         <p classes="u-font-size--l">审批额度</p>
-        <p classes="u-font-size--xl">100000元</p>
+        <p classes="u-font-size--xl" @click="confirm">100000元</p>
       </Card>
     </GridItem>
     <GridItem>
@@ -48,6 +48,14 @@ export default {
   mixins: [CssModule],
   created() {
 
+  },
+  methods: {
+    confirm () {
+      this.$UI.confirm.show({
+        title: 'Title',
+        body: 'Content'
+      })
+    }
   }
 }
 </script>

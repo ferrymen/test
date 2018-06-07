@@ -7,13 +7,17 @@ const Plug = {
 
     if (!$vm) {
       $vm = new _Confirm({
-        el: document.createElement('div')
+        el: document.createElement('div'),
+        propsData: {
+          title: 'Why'
+        }
       })
       document.body.appendChild($vm.$el)
     }
 
     const confirm = {
       show (options) {
+        Object.assign($vm, options)
         $vm.showValue = true
       },
       hide () {
@@ -24,6 +28,10 @@ const Plug = {
       }
     }
     Vue.prototype.$UI.confirm = confirm
+
+    // $UI.confirm.show({
+    //   title: 'How'
+    // })
   }
 }
 
