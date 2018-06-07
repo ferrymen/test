@@ -14,3 +14,11 @@
 .c-list--trench {
   margin-top: -$spacing-unit;
 }
+
+.c-list__border--bottom > li {
+  border-bottom: $border-width solid $border-color;
+}
+
+.c-list__border--bottom > li:last-child {
+  border-bottom: none;
+}
