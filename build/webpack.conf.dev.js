@@ -12,7 +12,8 @@ module.exports = WebpackMerge(WebpackConfBase, {
     filename: '[name].js'
   },
   devServer: {
-    open: true
+    open: true,
+    port: 9999
   },
   plugins: [
     new HtmlWebpackPlugin({
