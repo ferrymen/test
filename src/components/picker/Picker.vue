@@ -1,6 +1,8 @@
 <template>
   <div class="c-picker">
-    <slot></slot>
+    <FlexBox>
+      <FlexBoxItem></FlexBoxItem>
+    </FlexBox>
   </div>
 </template>
 

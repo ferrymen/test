@@ -1,9 +1,16 @@
 <template>
-  <div class="c-picker-select">
+  <div class="c-popup-picker">
     <div v-transfer>
-      <div class="c-picker-select__trans">
-        <Picker></Picker>
-      </div>
+      <Popup>
+        <div class="c-popup-picker-container">
+          <PopupHeader>
+            
+          </PopupHeader>
+          <Picker>
+            
+          </Picker>
+        </div>
+      </Popup>
     </div>
   </div>
 </template>
