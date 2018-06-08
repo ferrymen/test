@@ -3,13 +3,25 @@
     <GridItem>
       <Section>Switch</Section>
       <Switcher v-model="switcherVal" :valueMap="switcherValMap" />{{switcherVal}}
+      
       <Section>CheckIcon</Section>
       <CheckIcon :values.sync="checkIcon">点我{{checkIcon}}</CheckIcon>
+      
       <Section>Checkers</Section>
       <Checker v-model="checkRadio">
         {{checkRadio}}
         <CheckerItem v-for="i in [1, 2, 3]" :key="i" :value="i">点我{{i}}</CheckerItem>
       </Checker>
+
+      <Section>Picker Select</Section>
+      <PickerSelect
+        v-model="pickerSelectVM"
+        :data="pickerSelectList"
+        @on-show="onShow"
+        @on-hide="onHide"
+        @on-change="onChange"
+        placeholder="请选择">
+      </PickerSelect>
     </GridItem>
   </Grid>
 </template>
@@ -21,8 +33,22 @@ export default {
       switcherVal: 'N',
       switcherValMap: ['N', 'Y'],
       checkIcon: false,
-      checkRadio: 1
+      checkRadio: 1,
+      pickerSelectVM: ['iPhone'],
+      pickerSelectList: [['小米', 'iPhone', '华为', '情怀', '三星', '其他', '不告诉你']],
+      pickerSelectTitile: '手机机型'
     }
+  },
+  methods: {
+    onShow () {
+      console.log('on show')
+    },
+    onHide (type) {
+      console.log('on hide', type)
+    },
+    onChange (val) {
+      console.log('val change', val)
+    },
   }
 }
 </script>
