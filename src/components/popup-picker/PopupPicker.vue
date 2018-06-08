@@ -6,8 +6,11 @@
           <PopupHeader>
             
           </PopupHeader>
-          <Picker>
-            
+          <Picker
+            v-model="tempValue"
+            :data="data"
+          >
+
           </Picker>
         </div>
       </Popup>
@@ -19,6 +22,10 @@
 import Transfer from '../../directives/transfer'
 import { Picker } from '../picker'
 
+const getObject = function (obj) {
+  return JSON.parse(JSON.stringify(obj))
+}
+
 export default {
   name: 'PickerSelect',
   directives: {
@@ -26,6 +33,25 @@ export default {
   },
   components: {
     Picker
+  },
+  props: {
+    value: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    data: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
+  },
+  data () {
+    return {
+      tempValue: getObject(this.value)
+    }
   }
 }
 </script>

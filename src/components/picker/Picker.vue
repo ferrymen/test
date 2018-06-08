@@ -8,6 +8,13 @@
 
 <script>
 export default {
-  name: 'Picker'
+  name: 'Picker',
+  props: {
+    value: Array,
+    data: Array
+  },
+  created () {
+    console.log(this)
+  }
 }
 </script>
