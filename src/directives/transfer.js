@@ -35,13 +35,13 @@ export default {
       hasMovedOut = true
     }
 
-    if (!el.__transferData) {
-      el.__transferData = {
-        parentNode: parentNode,
-        home: home,
-        target: getTarget(value),
-        hasMovedOut: hasMovedOut
-      }
-    }
+    // if (!el.__transferData) {
+    //   el.__transferData = {
+    //     parentNode: parentNode,
+    //     home: home,
+    //     target: getTarget(value),
+    //     hasMovedOut: hasMovedOut
+    //   }
+    // }
   }
 }

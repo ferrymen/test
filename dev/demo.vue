@@ -14,6 +14,7 @@
       </Checker>
 
       <Section>Picker Select</Section>
+      <Button @on-click="mobilePicker" label="Mobile Picker" />
       <PopupPicker
         v-model="pickerSelectVM"
         :data="pickerSelectList"
@@ -53,6 +54,9 @@ export default {
     onChange (val) {
       console.log('val change', val)
     },
+    mobilePicker () {
+      
+    }
   }
 }
 </script>
