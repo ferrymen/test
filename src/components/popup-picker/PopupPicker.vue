@@ -3,8 +3,12 @@
     <div v-transfer>
       <Popup>
         <div class="c-popup-picker-container">
-          <PopupHeader>
-            
+          <PopupHeader
+            :left-text="cancelText"
+            :right-text="confirmText"
+            :title="popupTitle"
+             @on-click-left="onHide(false)"
+             @on-click-right="onHide(true)">
           </PopupHeader>
           <Picker
             v-model="tempValue"
@@ -27,7 +31,7 @@ const getObject = function (obj) {
 }
 
 export default {
-  name: 'PickerSelect',
+  name: 'PopupPicker',
   directives: {
     Transfer
   },
@@ -46,11 +50,20 @@ export default {
       default () {
         return []
       }
-    }
+    },
+    title: String,
+    cancelText: String,
+    confirmText: String,
+    popupTitle: String,
   },
   data () {
     return {
       tempValue: getObject(this.value)
+    }
+  },
+  methods: {
+    onHide (type) {
+
     }
   }
 }

@@ -14,14 +14,18 @@
       </Checker>
 
       <Section>Picker Select</Section>
-      <PickerSelect
+      <PopupPicker
         v-model="pickerSelectVM"
         :data="pickerSelectList"
         @on-show="onShow"
         @on-hide="onHide"
         @on-change="onChange"
-        placeholder="请选择">
-      </PickerSelect>
+        placeholder="请选择"
+        :popupTitle="pickerSelectTitile"
+        cancelText="取消"
+        confirmText="确认"
+        >
+      </PopupPicker>
     </GridItem>
   </Grid>
 </template>
@@ -36,7 +40,7 @@ export default {
       checkRadio: 1,
       pickerSelectVM: ['iPhone'],
       pickerSelectList: [['小米', 'iPhone', '华为', '情怀', '三星', '其他', '不告诉你']],
-      pickerSelectTitile: '手机机型'
+      pickerSelectTitile: '手机机型',
     }
   },
   methods: {
