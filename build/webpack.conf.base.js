@@ -33,7 +33,12 @@ module.exports = {
             }
           },
           'sass-loader'
-        ]
+        ],
+        include:[resolve(__dirname, '..', 'src/style')]
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
       }
     ]
   },

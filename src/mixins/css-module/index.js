@@ -1,3 +1,4 @@
+// https://github.com/fjc0k/vue-css-modules.git
 import { INJECTED } from './config'
 import createElement from './create-element'
 import Style from '../../style/_bootstrap.scss'

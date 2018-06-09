@@ -1,6 +1,6 @@
 <template>
   <div class="c-flex-box__item">
-    Flex Box Item
+    <slot></slot>
   </div>
 </template>
 
