@@ -80,7 +80,17 @@ export default {
   },
   methods: {
     onHide (type) {
-
+      this.showValue = false
+      if (type) {
+        this.closeType = true
+        this.currentValue = getObject(this.tempValue)
+      }
+      if (!type) {
+        this.closeType = false
+        if (this.value.length > 0) {
+          this.tempValue = getObject(this.currentValue)
+        }
+      }
     },
     onClick () {
       if (!this.disabled) {
