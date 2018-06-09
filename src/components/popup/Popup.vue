@@ -1,6 +1,9 @@
 <template>
   <transition>
-    <div class="c-popup">
+    <div
+      class="c-popup"
+      v-show="show"
+    >
       <slot></slot>
     </div>
   </transition>
@@ -8,7 +11,44 @@
 
 <script>
 export default {
-  name: 'Popup'
+  name: 'Popup',
+  props: {
+    value: Boolean,
+  },
+  data () {
+    return {
+      // initialShow: false,
+      show: this.value
+    }
+  },
+  watch: {
+    value (val) {
+      this.show = val
+    },
+    show (val) {
+      // this.$emit('input', val)
+      // if (val) {
+      //   this.doShow()
+      // } else {
+      //   this.$emit('on-hide')
+      //   this.show = false
+      //   // this.popup.hide(false)
+      // }
+    }
+  },
+  methods: {
+    doShow () {
+      // console.log(this.popup)
+      // this.popup && this.popup.show()
+      // this.$emit('on-show')
+      // this.fixSafariOverflowScrolling('auto')
+      // this.layout === 'VIEW_BOX' && dom.addClass(document.body, 'vux-modal-open')
+      // if (!this.hasFirstShow) {
+      //   this.$emit('on-first-show')
+      //   this.hasFirstShow = true
+      // }
+    }
+  }
 }
 </script>
 
