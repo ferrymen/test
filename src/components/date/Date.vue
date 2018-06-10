@@ -83,6 +83,17 @@ export default {
         this.$emit('on-change', val)
       }
       // this.validate()
+    },
+    value (val) {
+      // do not force render when renderInline is true
+      if (this.readonly || (this.picker && this.picker.config.renderInline)) {
+        this.currentValue = val
+        return
+      }
+      if (this.currentValue !== val) {
+        this.currentValue = val
+        this.render()
+      }
     }
   },
   created () {

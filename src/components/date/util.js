@@ -67,3 +67,7 @@ export function getMaxDay (year, month) {
   }
   return [4, 6, 9, 11].indexOf(month) >= 0 ? 30 : 31
 }
+
+export function isLeapYear (year) {
+  return year % 100 !== 0 && year % 4 === 0 || year % 400 === 0
+}
