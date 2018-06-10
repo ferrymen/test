@@ -79,6 +79,18 @@ export default {
       currentValue: this.value
     }
   },
+  watch: {
+    value (val) {
+      if (JSON.stringify(val) !== JSON.stringify(this.tempValue)) {
+        this.tempValue = getObject(val)
+        this.currentValue = getObject(val)
+      }
+    },
+    currentValue (val) {
+      this.$emit('input', getObject(val))
+      this.$emit('on-change', getObject(val))
+    }
+  },
   methods: {
     onHide (type) {
       this.showValue = false

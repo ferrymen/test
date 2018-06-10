@@ -66,14 +66,13 @@ export default {
       // }
     },
     data (val) {
-      console.log(val)
+
     },
     currentData (newData) {
-      console.log(newData)
+
     }
   },
   created () {
-    console.log(this)
     if (this.columns !== 0) {
       const length = this.columns
       this.store = new Manager(this.data, length, this.fixedColumns || this.columns)
@@ -125,6 +124,7 @@ export default {
           itemClass: _this.itemClass,
           onSelect (value) {
             console.log(value)
+            _this.$set(_this.currentValue, i, value)
           }
         })
         console.log(_this.currentValue)
