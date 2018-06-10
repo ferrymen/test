@@ -3,9 +3,9 @@ import { each, getElement, toElement, parseDate, removeElement, trimZero, addZer
 
 const TEMPLATE = `<div class="c-date-wrapper">
   <div class="c-date-header">
-    <div class="c-date-item dp-left vux-datetime-cancel" data-role="cancel">cancel</div>
-    <div class="c-date-item vux-datetime-clear" data-role="clear"></div>
-    <div class="c-date-item dp-right vux-datetime-confirm" data-role="confirm">done</div>
+    <div class="c-date-item c-date-left c-date-cancel" data-role="cancel">cancel</div>
+    <div class="c-date-item c-date-date-clear" data-role="clear"></div>
+    <div class="c-date-item c-date-right c-date-confirm" data-role="confirm">done</div>
   </div>
   <div class="c-date-body">
     <div class="c-date-item" data-role="year"></div>
@@ -13,6 +13,11 @@ const TEMPLATE = `<div class="c-date-wrapper">
     <div class="c-date-item" data-role="day"></div>
   </div>
 </div>`
+
+const MASK_TEMPLATE = '<div class="c-date-mask"></div>'
+
+const SHOW_ANIMATION_TIME = 200
+const SHOW_CONTAINER_TIME = 300
 
 const NOW = new Date()
 
@@ -26,6 +31,11 @@ const DEFAULT_CONFIG = {
   yearRow: '{value}',
   monthRow: '{value}',
   dayRow: '{value}',
+  minYear: 2000,
+  maxYear: 2030,
+  onShow () {},
+  onHide () {},
+  onConfirm () {},
 }
 
 const TYPE_MAP = {
@@ -34,6 +44,7 @@ const TYPE_MAP = {
   day: ['DD', 'D'],
 }
 
+let MASK = null
 let CURRENT_PICKER
 
 function renderScroller (el, data, value, fn) {
@@ -47,6 +58,39 @@ function renderScroller (el, data, value, fn) {
     onSelect: fn
   })
 }
+
+function showMask () {
+  if (!MASK) {
+    MASK = toElement(MASK_TEMPLATE)
+    document.body.appendChild(MASK)
+
+    MASK.addEventListener('click', function () {
+      CURRENT_PICKER && CURRENT_PICKER.hide('cancel')
+    }, false)
+    MASK.addEventListener('touchmove', function (e) {
+      e.preventDefault()
+    }, false)
+  }
+
+  MASK.style.display = 'block'
+
+  setTimeout(function () {
+    MASK && (MASK.style.opacity = 0.5)
+  }, 0)
+}
+
+function hideMask () {
+  if (!MASK) {
+    return
+  }
+
+  MASK.style.opacity = 0
+
+  setTimeout(function () {
+    MASK && (MASK.style.display = 'none')
+  }, SHOW_ANIMATION_TIME)
+}
+
 
 function DatePicker (config) {
   const self = this
@@ -205,10 +249,87 @@ DatePicker.prototype = {
       }
 
       this._show(newValueMap)
+
+      self.find('[data-role=cancel]').addEventListener('click', function (e) {
+        e.preventDefault()
+        self.hide('cancel')
+      }, false)
+
+      self.find('[data-role=confirm]').addEventListener('click', function (e) {
+        e.preventDefault()
+        self.confirm()
+      }, false)
+
+      if (self.config.clearText) {
+        self.find('[data-role=clear]').addEventListener('click', function (e) {
+          e.preventDefault()
+          self.clear()
+        }, false)
+      }
+    }
+
+    if (!this.renderInline) {
+      showMask()
+      config.onShow.call(self)
     }
   },
   find (selector) {
     return this.container.querySelector(selector)
+  },
+  hide (type) {
+    if (!this.container) {
+      return
+    }
+    const self = this
+    self.container.style.removeProperty('transform')
+    self.container.style.removeProperty('-webkit-transform')
+
+    setTimeout(function () {
+      self.container && (self.container.style.display = 'none')
+    }, SHOW_CONTAINER_TIME)
+
+    hideMask()
+
+    self.config.onHide.call(self, type)
+    if (self.config.destroyOnHide) {
+      setTimeout(() => {
+        self.destroy()
+      }, 500)
+    }
+  },
+  confirm () {
+    const value = this.getValue()
+    this.value = value
+
+    if (this.config.onConfirm.call(this, value) === false) {
+      return
+    }
+
+    this.hide('confirm')
+  },
+  getValue () {
+    const self = this
+    const config = self.config
+
+    let value = config.format
+
+    function formatValue (scroller, expr1, expr2) {
+      if (scroller) {
+        const val = scroller.value
+        if (expr1) {
+          value = value.replace(new RegExp(expr1, 'g'), addZero(val))
+        }
+        if (expr2) {
+          value = value.replace(new RegExp(expr2, 'g'), trimZero(val))
+        }
+      }
+    }
+
+    each(TYPE_MAP, function (key, list) {
+      formatValue(self[key + 'Scroller'], list[0], list[1])
+    })
+
+    return value
   },
   _makeData (type, year, month, day) {
     const config = this.config
