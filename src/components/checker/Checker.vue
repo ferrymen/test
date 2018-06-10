@@ -10,7 +10,13 @@ import Style from '../../style/06_components/_checker.scss'
 export default {
   name: 'Checker',
   props: {
-    value: [String, Number, Array, Object]
+    value: [String, Number, Array, Object],
+    defaultItemClass: String,
+    selectedItemClass: String,
+    type: {
+      type: String,
+      default: 'radio'
+    },
   },
   data () {
     return {

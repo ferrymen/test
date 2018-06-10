@@ -40,7 +40,15 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
-      }
+      },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      //   loader: 'url-loader',
+      //   query: {
+      //     limit: 10000,
+      //     name: resolve(__dirname,'../static/img/[name].[hash:7].[ext]')
+      //   }
+      // },
     ]
   },
   plugins: [

@@ -8,7 +8,10 @@
       <CheckIcon :values.sync="checkIcon">点我{{checkIcon}}</CheckIcon>
       
       <Section>Checkers</Section>
-      <Checker v-model="checkRadio">
+      <Checker
+        v-model="checkRadio"
+        default-item-class="demo5-item"
+        selected-item-class="demo5-item-selected">
         {{checkRadio}}
         <CheckerItem v-for="i in [1, 2, 3]" :key="i" :value="i">点我{{i}}</CheckerItem>
       </Checker>
@@ -70,3 +73,21 @@ export default {
   }
 }
 </script>
+
+<style>
+.demo5-item {
+    width: 100px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-right: 6px;
+}
+
+.demo5-item-selected {
+    /* background: #ffffff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAMAAACecocUAAAAGXRFW…AABAPB5f+PlhLUpZMWuQcYMWLEyDN4ymqa5KS4+3G+KAEGACQmAGlKzr56AAAAAElFTkSuQmCC) no-repeat right bottom; */
+    border-color: #ff4a00;
+}
+</style>
