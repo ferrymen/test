@@ -73,10 +73,36 @@ export default {
       currentValue: null
     }
   },
+  watch: {
+    currentValue (val, oldVal) {
+      this.$emit('input', val)
+      if (!this.isFirstSetValue) {
+        this.isFirstSetValue = true
+        oldVal && this.$emit('on-change', val)
+      } else {
+        this.$emit('on-change', val)
+      }
+      // this.validate()
+    }
+  },
+  created () {
+    this.currentValue = this.value
+  },
   computed: {
     pickerOptions () {
+      const _this = this
       const options = {
         trigger: '#c-date-' + this.uuid,
+        value: this.currentValue,
+        onSelect (type, val, wholeValue) {
+          if (_this.picker && _this.picker.config.renderInline) {
+            _this.$emit('input', wholeValue)
+            _this.$emit('on-change', wholeValue)
+          }
+        },
+        onConfirm (value) {
+          _this.currentValue = value
+        },
       }
       return options
     }
@@ -101,6 +127,15 @@ export default {
         this.picker && this.picker.destroy()
         this.picker = new DatePicker(this.pickerOptions)
       })
+    },
+    validate () {
+      if (!this.currentValue && this.required) {
+        this.valid = false
+        this.errors.required = '必填'
+        return
+      }
+      this.valid = true
+      this.errors = {}
     }
   }
 }

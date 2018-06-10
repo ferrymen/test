@@ -33,6 +33,7 @@ const DEFAULT_CONFIG = {
   dayRow: '{value}',
   minYear: 2000,
   maxYear: 2030,
+  onSelect () {},
   onShow () {},
   onHide () {},
   onConfirm () {},
