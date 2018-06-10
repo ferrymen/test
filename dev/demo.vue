@@ -39,6 +39,9 @@
          v-model="date"
       >
       </Date>
+
+      <Section>Camera</Section>
+      <Camera />
     </GridItem>
   </Grid>
 </template>
