@@ -1,7 +1,7 @@
 import Scroller from '../picker/scroller'
 import { each, getElement, toElement, parseDate, removeElement, trimZero, addZero, parseRow, getMaxDay } from './util'
 
-const TEMPLATE = `<div class="c-date-wrapper">
+const TEMPLATE = `<div class="c-date-wrapper" style="height:302px;">
   <div class="c-date-header">
     <div class="c-date-item c-date-left c-date-cancel" data-role="cancel">cancel</div>
     <div class="c-date-item c-date-date-clear" data-role="clear"></div>

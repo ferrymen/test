@@ -5,7 +5,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'bell-ui': resolve(__dirname, '../src')
+      'bell-ui': resolve(__dirname, '../src'),
+      'vue$': resolve(__dirname, '../node_modules/vue/dist/vue.esm.js')
     }
   },
   module: {
