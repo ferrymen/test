@@ -14,7 +14,6 @@
       </Checker>
 
       <Section>Picker Select</Section>
-      <Button @on-click="mobilePicker" label="Mobile Picker" />
       <PopupPicker
         v-model="pickerSelectVM"
         :data="pickerSelectList"
@@ -27,6 +26,16 @@
         confirmText="确认"
         >
       </PopupPicker>
+
+      <Section>Picker Date</Section>
+      <Date     
+        placeholder="请选择"
+        cancelText="取消"
+        confirmText="确认"
+         title="datetime"
+         v-model="date"
+      >
+      </Date>
     </GridItem>
   </Grid>
 </template>
@@ -42,6 +51,7 @@ export default {
       pickerSelectVM: ['iPhone'],
       pickerSelectList: [['小米', 'iPhone', '华为', '情怀', '三星', '其他', '不告诉你']],
       pickerSelectTitile: '手机机型',
+      date: '',
     }
   },
   methods: {
