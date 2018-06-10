@@ -3,7 +3,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   resolve: {
-    extensions: ['.vue', '.js', '.json'],
+    extensions: ['.js', '.vue', '.json'],
     alias: {
       'bell-ui': resolve(__dirname, '../src')
     }

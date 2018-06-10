@@ -75,7 +75,8 @@ export default {
   data () {
     return {
       tempValue: getObject(this.value),
-      showValue: false
+      showValue: false,
+      currentValue: this.value
     }
   },
   methods: {
