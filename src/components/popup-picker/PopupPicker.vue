@@ -11,6 +11,7 @@
     <div v-transfer>
       <Popup
         v-model="showValue"
+        @on-hide="onPopupHide"
       >
         <div class="c-popup-picker-container">
           <PopupHeader
@@ -109,6 +110,12 @@ export default {
       if (!this.disabled) {
         this.showValue = true
       }
+    },
+    onPopupHide (val) {
+      if (this.value.length > 0) {
+        this.tempValue = getObject(this.currentValue)
+      }
+      this.$emit('on-hide', this.closeType)
     }
   }
 }

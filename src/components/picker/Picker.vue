@@ -38,32 +38,34 @@ export default {
   },
   watch: {
     value (val) {
-      // console.log(val)
+      if (JSON.stringify(val) !== JSON.stringify(this.currentValue)) {
+        this.currentValue = val
+      }
     },
     currentValue (val ,oldVal) {
       // console.log(val)
-      // this.$emit('input', val)
+      this.$emit('input', val)
       // // render all the scroller for chain datas
-      // if (this.columns !== 0) {
-      //   if (val.length > 0) {
-      //     if (JSON.stringify(val) !== JSON.stringify(oldVal)) {
-      //       this.currentData = this.store.getColumns(val)
-      //       this.$nextTick(function () {
-      //         this.render(this.currentData, val)
-      //       })
-      //     }
-      //   }
-      // } else {
-      //   if (val.length) {
-      //     for (let i = 0; i < val.length; i++) {
-      //       if (this.scroller[i] && this.scroller[i].value !== val[i]) {
-      //         this.scroller[i].select(val[i])
-      //       }
-      //     }
-      //   } else {
-      //     this.render(this.currentData, [])
-      //   }
-      // }
+      if (this.columns !== 0) {
+        if (val.length > 0) {
+          if (JSON.stringify(val) !== JSON.stringify(oldVal)) {
+            this.currentData = this.store.getColumns(val)
+            this.$nextTick(function () {
+              this.render(this.currentData, val)
+            })
+          }
+        }
+      } else {
+        if (val.length) {
+          for (let i = 0; i < val.length; i++) {
+            if (this.scroller[i] && this.scroller[i].value !== val[i]) {
+              this.scroller[i].select(val[i])
+            }
+          }
+        } else {
+          this.render(this.currentData, [])
+        }
+      }
     },
     data (val) {
 
