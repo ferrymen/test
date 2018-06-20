@@ -3,7 +3,7 @@ const merge = require('webpack-merge')
 const config = require('../build/webpack.conf.base.js')
 
 module.exports = (storybookBaseConfig, configType, defaultConfig) => {
-  defaultConfig = merge(defaultConfig)
+  defaultConfig = merge(defaultConfig, config)
 
   defaultConfig.module.rules.push({
     test: [/\.stories\.js$/, /index\.js$/],
